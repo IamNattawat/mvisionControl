@@ -2,7 +2,7 @@
 version: '3.6'
 services:
   grafana:
-    image: alansup/mvision:1.0
+    image: alansup/mvision:latest
     restart: always
     ports:
       - 3000:3000
