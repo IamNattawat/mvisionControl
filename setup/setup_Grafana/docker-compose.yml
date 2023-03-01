@@ -15,6 +15,15 @@ services:
       - ./configFile/grafana.ini:/etc/grafana/grafana.ini:ro
     depends_on:
       - renderer
+  
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    restart: always
+    ports:
+      - 9090:9090
+    volumes:
+      - ./configFile/prometheus.yml:/etc/prometheus/prometheus.yml
 
   renderer:
     image: grafana/grafana-image-renderer:3.5.0
